@@ -3,7 +3,7 @@ import yaml
 import numpy as np
 
 def Generate_config_file():
-    MAIN_DIR = '/Users/xiejialun/Desktop/ML/Kaggle/PKU_Baidu_Autonomous_Driving/Dataset/pku-autonomous-driving/'
+    MAIN_DIR = './Dataset/pku-autonomous-driving/'
     config_dict = {
         'MAIN_DIR' : MAIN_DIR,
         'TRAIN_CSV_DIR' : os.path.join(MAIN_DIR, 'train.csv'),
@@ -12,7 +12,7 @@ def Generate_config_file():
         'TRAIN_MASK_DIR' : os.path.join(MAIN_DIR, 'train_masks'),
         'TEST_IMAGE_DIR' : os.path.join(MAIN_DIR, 'test_images'),
         'TEST_MASK_DIR' : os.path.join(MAIN_DIR, 'test_masks'),
-        'OUTPUT_FILE_PATH' : '/Users/xiejialun/Desktop/ML/Kaggle/PKU_Baidu_Autonomous_Driving/OutputFile/',
+        'OUTPUT_FILE_PATH' : './OutputFile/',
         'ORIGINAL_IMAGE_SIZE' : (2710, 3384),
         'INPUT_IMAGE_SIZE' : (512, 1536),
         'OUTPUT_SIZE' : (128,384),
@@ -23,7 +23,7 @@ def Generate_config_file():
         'BACKBONE_NAME' : 'efficientnetb2',
         'LEARNING_RATE' : 1e-4,
         'CENTERNET_PRETRAIN_PATH' : None,
-        'CP_SAVING_PATH' : '/Users/xiejialun/Desktop/ML/Kaggle/PKU_Baidu_Autonomous_Driving/Dataset/checkpoints/efficientnetb2_CenterNet.hdf5',
+        'CP_SAVING_PATH' : './Dataset/checkpoints/efficientnetb2_CenterNet.hdf5',
         'HFLIP_FOR_TRAIN' : True,
         'ROTATE_FOR_TRAIN' : True,
         'X_ROT_ANGLE' : 4,
@@ -36,7 +36,7 @@ def Generate_config_file():
         'HEATMAP_LOSS_WEIGHT' : 0.1,
         'ROTATION_LOSS_WEIGHT' : 1.25,
         'DEPTH_LOSS_WEIGHT' : 1.5,
-        'CONFIDENCE_THRESHOLD' : 15
+        'CONFIDENCE_THRESHOLD' : 0.1
     }
 
 
