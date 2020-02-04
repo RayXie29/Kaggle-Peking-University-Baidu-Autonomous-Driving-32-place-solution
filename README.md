@@ -14,6 +14,7 @@ With these information, we can know the distance between cars, and how the cars 
 ## Data augmentation
 
 <br />
+
 **1. Random Gamma** <br />
 **2. Random brightness** <br />
 **3. Random contrast** <br />
