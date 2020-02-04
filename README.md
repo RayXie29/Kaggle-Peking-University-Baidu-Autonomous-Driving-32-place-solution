@@ -4,14 +4,14 @@ The main architecture of this solution is CenterNet, which is a very great work 
 <br />
 <br />
 <br />
-##Overview
+## Overview
 <br />
 The main task of this competition is to detect the cars on the street. The detection task is not just on 2D coordinate, but 3D world coordinate. <br />
 So the ground truths of this competition are the 3D rotation angles(Pitch, Yaw and Roll) and world coordinate corresponding to the data collection camera. <br />
 With these information, we can know the distance between cars, and how the cars are going to turn. <br />
 <br />
 <br />
-##Data augmentation
+## Data augmentation
 
 1. Random Gamma <br />
 2. Random brightness <br />
@@ -25,7 +25,7 @@ Camera rotation is added after the comptition, this is a very important augmenta
 And this augmentation techique is shared by a person who won the first place - [outrunner](https://www.kaggle.com/outrunner)in this compeititon. <br />
 Since there are only around 4000 pictures for training, so camera rotation is a great way to expand the training dataset. <br />
 
-##Model architecture
+## Model architecture
 
 I trained 4 models for this competition, and ensemble them in the end to be my final submission answer. <br />
 There are:<br />
@@ -49,14 +49,14 @@ But there is a different between my implementation and original article, I perfo
 This change can make the training much stable. <br />
 <br />
 
-##Loss functions
+## Loss functions
 <br />
 Focal Loss for heatmap head
 L1 Loss for rotation and depth head
 The total loss is sum by some weightings of these 3 losses, which are `0.1 : (0.9)*1.25 : (0.9)*1.5 = heatmap_loss : rotation_loss : depth_loss` <br />
 <br />
 
-##Training recipe
+## Training recipe
 <br />
 
 **Training data : 80% of original dataset, validation data  : 20% of original dataset**. <br />
@@ -71,7 +71,7 @@ Instead, I use the prediction of validation dataset to calculate the mAP in the 
 The learning rate is decreased by x = x*0.5 if the validation mAP didn't improve in 2 epochs. <br />
 <br />
 
-##Demo 
+## Demo 
 <br />
 
 ![ScreenShot](demo/demo1.png)
@@ -81,7 +81,7 @@ The learning rate is decreased by x = x*0.5 if the validation mAP didn't improve
 ![ScreenShot](demo/demo2.png)
 
 <br />
-##Reference
+## Reference
 [Object of points](https://arxiv.org/abs/1904.07850) <br />
 [Original CenterNet github repo](https://github.com/xingyizhou/CenterNet) <br />
 [CenterNet github repo](https://github.com/xuannianz/keras-CenterNet) <br />
