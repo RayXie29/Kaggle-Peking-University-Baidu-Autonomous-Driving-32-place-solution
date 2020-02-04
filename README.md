@@ -14,13 +14,13 @@ With these information, we can know the distance between cars, and how the cars 
 ## Data augmentation
 
 <br />
-1. Random Gamma <br />
-2. Random brightness <br />
-3. Random contrast <br />
-4. Gaussian noise <br />
-5. Blur <br />
-4. Horizontal flip <br />
-5. Camera rotation <br />
+**1. Random Gamma** <br />
+**2. Random brightness** <br />
+**3. Random contrast** <br />
+**4. Gaussian noise** <br />
+**5. Blur** <br />
+**4. Horizontal flip** <br />
+**5. Camera rotation** <br />
 
 <br />
 
@@ -34,17 +34,17 @@ I trained 4 models for this competition, and ensemble them in the end to be my f
 There are:<br />
 <br />
 
-1. CenterNet(UNet++ decoder) with efficietnet B3 backbone <br />
-2. CenterNet(msra decoder) with efficietnet B2 backbone <br />
-3. CenterNet(msra decoder) with efficietnet B3 backbone <br />
-4. CenterNet(msra decoder) with efficietnet B4 backbone <br />
+**1. CenterNet(UNet++ decoder) with efficietnet B3 backbone** <br />
+**2. CenterNet(msra decoder) with efficietnet B2 backbone** <br />
+**3. CenterNet(msra decoder) with efficietnet B3 backbone** <br />
+**4. CenterNet(msra decoder) with efficietnet B4 backbone** <br />
 <br />
 I changed the decoder to UNet++ in the last few days. It can provide better mAP score, but the training time is also longer. <br />
 All the models have the same prediction heads, there are : <br />
 <br />
-1. Heatmap head (for keypoint detection) <br />
-2. Rotation head (for Yaw, Pitch and Roll) <br />
-3. Depth head (for distance ) <br />
+**1. Heatmap head (for keypoint detection)** <br />
+**2. Rotation head (for Yaw, Pitch and Roll regression)** <br />
+**3. Depth head (for distance regression)** <br />
 
 <br />
 
@@ -56,8 +56,8 @@ This change can make the training much stable. <br />
 
 ## Loss functions
 <br />
-Focal Loss for heatmap head
-L1 Loss for rotation and depth head
+**Focal Loss for heatmap head**
+**L1 Loss for rotation and depth head**
 The total loss is sum by some weightings of these 3 losses, which are `0.1 : (0.9)*1.25 : (0.9)*1.5 = heatmap_loss : rotation_loss : depth_loss` <br />
 <br />
 
