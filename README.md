@@ -12,7 +12,7 @@ With these information, we can know the distance between cars, and how the cars 
 <br />
 <br />
 ## Data augmentation
-
+<br />
 1. Random Gamma <br />
 2. Random brightness <br />
 3. Random contrast <br />
@@ -81,7 +81,7 @@ The learning rate is decreased by x = x*0.5 if the validation mAP didn't improve
 ![ScreenShot](demo/demo2.png)
 
 <br />
-## Reference
+## Reference <br />
 [Object of points](https://arxiv.org/abs/1904.07850) <br />
 [Original CenterNet github repo](https://github.com/xingyizhou/CenterNet) <br />
 [CenterNet github repo](https://github.com/xuannianz/keras-CenterNet) <br />
