@@ -72,7 +72,7 @@ The total loss is sum by some weightings of these 3 losses, which are `0.1 : (0.
 
 **Intital learning rate : 6e-4** <br />
 
-**Optimizer : **Adam optimizer** <br />
+**Optimizer : Adam optimizer** <br />
 
 The weightings of each loss are coming from many trials of training, which I add the all the losses into metric. <br />
 After I settled down the weightings, I discard the validation on losses of validation dataset. <br />
