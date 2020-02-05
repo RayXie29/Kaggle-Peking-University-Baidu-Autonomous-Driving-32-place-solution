@@ -57,8 +57,11 @@ This change can make the training much stable. <br />
 
 ## Loss functions
 <br />
-**Focal Loss for heatmap head**
-**L1 Loss for rotation and depth head**
+
+**Focal Loss for heatmap head** <br />
+
+**L1 Loss for rotation and depth head** <br />
+
 The total loss is sum by some weightings of these 3 losses, which are `0.1 : (0.9)*1.25 : (0.9)*1.5 = heatmap_loss : rotation_loss : depth_loss` <br />
 <br />
 
